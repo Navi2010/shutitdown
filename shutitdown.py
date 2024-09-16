@@ -1,19 +1,11 @@
-import os
-import platform
-
 def shutdown():
-    system_name = platform.system()
-
-    if system_name == 'Windows':
-        os.system('shutdown /s /t 1')
-    elif system_name in ('Linux', 'Darwin'):
-        os.system('sudo shutdown now')
+    print ('make answer below all lowercase')
+    user_input = input("do you want to shut down the system? (yes/no): ")
+    
+    if user_input == 'yes':
+        print("shutting down...")
+    elif user_input == 'no':
+        print("abort shutdown.")
     else:
-        print('unsupported system')
-
-def main():
-    print('shutting down system: ')
-    shutdown()
-
-if __name__ == "__main__":
-    main()
+        print("sorry, there has been an error.")
+shutdown()
